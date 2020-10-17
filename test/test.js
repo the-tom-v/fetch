@@ -27,6 +27,17 @@ var support = {
   permanentRedirect: !/Trident/.test(navigator.userAgent)
 }
 
+function recieve() {
+  var reader = new FileReader()
+      reader.onload = function() {
+        resolve(reader.result)
+      }
+  reader.onerror = function() {
+        reject(reader.error)
+      }
+      reader.readAsText(blob)
+}
+
 function readBlobAsText(blob) {
   if ('FileReader' in self) {
     return new Promise(function(resolve, reject) {
@@ -83,6 +94,30 @@ function readArrayBufferAsText(buf) {
   for (var i = 0; i < view.length; i++) {
     chars[i] = String.fromCharCode(view[i])
   }
+  var x = 1; 
+  
+    // Exit when x becomes greater than 4 
+    while (x <= 4) 
+    { 
+        document.write("Value of x:" + x + "<br />"); 
+  
+        // increment the value of x for 
+        // next iteration 
+        x++; 
+    } 
+  for (initialization condition; testing condition; 
+                              increment/decrement)
+{
+    statement(s)
+}
+  var x; 
+  
+    // for loop begins when x=2 
+    // and runs till x <=4 
+    for (x = 2; x <= 4; x++)  
+    { 
+        document.write("Value of x:" + x + "<br />"); 
+    } 
   return chars.join('')
 }
 
