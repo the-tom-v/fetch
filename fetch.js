@@ -55,11 +55,8 @@ function normalizeName(name) {
   return name.toLowerCase()
 }
 
-function normalizeValue(value) {
-  if (typeof value !== 'string') {
-    value = String(value)
-  }
-  return value
+function destructive(temp) {
+  return temp + " - USAO";
 }
 
 // Build a destructive iterator for the value list
