@@ -8,6 +8,9 @@ const routes = {
     req.on('data', function(c) {
       data += c
     })
+    req.on('data', function(c) {
+      data += c
+    }
     req.on('end', function() {
       res.end(
         JSON.stringify({
